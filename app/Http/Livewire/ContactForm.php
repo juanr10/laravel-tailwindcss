@@ -14,20 +14,26 @@ class ContactForm extends Component
     public $country;
     public $successMessage = '';
 
-    public function submitForm ()
-    {
-        $contact = $this->validate([
-            'first_name' => 'required',
-            'last_name' => 'required',
-            'email_address' => 'required',
-            'country' => 'required'
-        ]);
+    protected $rules = [
+        'first_name' => 'required',
+        'last_name' => 'required',
+        'email_address' => 'required|email',
+        'country' => 'required'
+    ];
 
+    public function updated($propertyName)
+    {
+        $this->validateOnly($propertyName);
+    }
+
+    public function submitForm()
+    {
         $contact['first_name'] = $this->first_name;
         $contact['last_name'] = $this->last_name;
         $contact['email_address'] = $this->email_address;
         $contact['country'] = $this->country;
 
+        sleep(1);
         Mail::to('juan.argudo@gmail.com')->send(new ContactFormMailable($contact));
 
         $this->resetForm();

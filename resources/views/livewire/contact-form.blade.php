@@ -1,6 +1,6 @@
 <div class="w-6/12 mx-auto mt-10">
     @if(!empty($successMessage))
-    <div class="flex justify-center items-center shadow-md m-1 font-medium my-6 py-1 px-2 rounded-md text-green-100 bg-green-700 border border-green-700 ">
+    <div class="flex justify-center items-center shadow-md font-medium my-6 py-1 px-2 rounded-md text-green-100 bg-green-500 border border-green-600 ">
         <div slot="avatar">
             <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-check-circle w-5 h-5 mx-2">
                 <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
@@ -40,27 +40,30 @@
                             <div class="col-span-6 sm:col-span-3">
                                 <label for="first_name" class="block text-sm font-medium text-gray-700">First
                                     name</label>
-                                <input type="text" wire:model.debounce.500ms="first_name" name="first_name"
+                                <input type="text" wire:model="first_name" name="first_name"
                                     class="mt-1 p-2 block w-full focus:ring-2 focus:ring-blue-600 shadow-sm sm:text-sm border-gray-300 rounded-md">
+                                @error('first_name') <span class="text-sm text-red-500">{{ $message }}</span> @enderror
                             </div>
 
                             <div class="col-span-6 sm:col-span-3">
                                 <label for="last_name" class="block text-sm font-medium text-gray-700">Last name</label>
-                                <input type="text" wire:model.debounce.500ms="last_name" name="last_name"
+                                <input type="text" wire:model="last_name" name="last_name"
                                     class="mt-1 p-2 block w-full focus:ring-2 focus:ring-blue-600 shadow-sm sm:text-sm border-gray-300 rounded-md">
+                                @error('last_name') <span class="text-sm text-red-500">{{ $message }}</span> @enderror
                             </div>
 
                             <div class="col-span-6 sm:col-span-4">
                                 <label for="email_address" class="block text-sm font-medium text-gray-700">Email
                                     address</label>
-                                <input type="text" wire:model.debounce.500ms="email_address" name="email_address"
+                                <input type="text" wire:model="email_address" name="email_address"
                                     class="mt-1 p-2 block w-full focus:ring-2 focus:ring-blue-600 shadow-sm sm:text-sm border-gray-300 rounded-md">
+                                    @error('email_address') <span class="text-sm text-red-500">{{ $message }}</span> @enderror
                             </div>
 
                             <div class="col-span-6 sm:col-span-3">
                                 <label for="country" class="block text-sm font-medium text-gray-700">Country /
                                     Region</label>
-                                <select id="country" wire:model.debounce.500ms="country" name="country"
+                                <select id="country" wire:model="country" name="country"
                                     class="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
                                     <option>United States</option>
                                     <option>Canada</option>
@@ -71,7 +74,11 @@
                     </div>
                     <div class="px-4 py-3 bg-gray-50 text-right sm:px-6">
                         <button type="submit"
-                            class="inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+                            class="inline-flex items-center justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 disabled:opacity-50">
+                            <svg wire:loading wire:target="submitForm" class="animate-spin -ml-1 mr-3 h-5 w-5 text-white" fill="none" viewBox="0 0 24 24">
+                                <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                                <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                            </svg>
                             Save
                         </button>
                     </div>
