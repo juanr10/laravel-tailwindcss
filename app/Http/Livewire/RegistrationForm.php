@@ -3,10 +3,10 @@
 namespace App\Http\Livewire;
 
 use Livewire\Component;
-use App\Mail\ContactFormMailable;
+use App\Mail\RegistrationFormMailable;
 use Illuminate\Support\Facades\Mail;
 
-class ContactForm extends Component
+class RegistrationForm extends Component
 {
     public $first_name;
     public $last_name;
@@ -34,11 +34,11 @@ class ContactForm extends Component
         $contact['country'] = $this->country;
 
         sleep(1);
-        Mail::to('juan.argudo@gmail.com')->send(new ContactFormMailable($contact));
+        Mail::to($this->email_address)->send(new RegistrationFormMailable($contact));
 
         $this->resetForm();
 
-        $this->successMessage = 'You have registered in our application.';
+        $this->successMessage = 'You have registered in our application! Please wait for our confirmation email to continue.';
     }
 
     private function resetForm ()
@@ -51,6 +51,6 @@ class ContactForm extends Component
 
     public function render()
     {
-        return view('livewire.contact-form');
+        return view('livewire.registration-form');
     }
 }

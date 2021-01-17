@@ -7,18 +7,20 @@ use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Mail\Mailable;
 use Illuminate\Queue\SerializesModels;
 
-class ContactFormMailable extends Mailable
+class RegistrationFormMailable extends Mailable
 {
     use Queueable, SerializesModels;
+
+    protected $contact;
 
     /**
      * Create a new message instance.
      *
      * @return void
      */
-    public function __construct()
+    public function __construct($contact)
     {
-        //
+        $this->contact = $contact;
     }
 
     /**
@@ -28,6 +30,7 @@ class ContactFormMailable extends Mailable
      */
     public function build()
     {
-        return $this->view('livewire.contact-form');
+        return $this->subject('Successfully registration')
+                ->markdown('emails.registration-form-email');
     }
 }

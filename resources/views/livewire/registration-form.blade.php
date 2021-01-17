@@ -1,6 +1,6 @@
 <div class="w-6/12 mx-auto mt-10">
     @if(!empty($successMessage))
-    <div class="flex justify-center items-center shadow-md font-medium my-6 py-1 px-2 rounded-md text-green-100 bg-green-500 border border-green-600 ">
+    <div class="flex justify-center items-center shadow-md font-medium my-6 py-1 px-2 rounded-md text-white bg-green-500 border border-green-600 ">
         <div slot="avatar">
             <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-check-circle w-5 h-5 mx-2">
                 <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
@@ -65,6 +65,8 @@
                                     Region</label>
                                 <select id="country" wire:model="country" name="country"
                                     class="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
+                                    <option>Spain</option>
+                                    <option>Ecuador</option>
                                     <option>United States</option>
                                     <option>Canada</option>
                                     <option>Mexico</option>

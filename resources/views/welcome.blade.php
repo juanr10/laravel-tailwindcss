@@ -24,7 +24,7 @@
         </div>
 
         <div>
-            @livewire('contact-form')
+            @livewire('registration-form')
         </div>
    </div>
 </div>
