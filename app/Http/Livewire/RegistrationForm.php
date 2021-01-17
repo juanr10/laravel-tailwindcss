@@ -38,8 +38,8 @@ class RegistrationForm extends Component
 
         $this->resetForm();
 
-        $this->successMessage = 'You have registered in our application!
-        Please wait for our confirmation email to continue.';
+        $this->successMessage =
+        'You have registered in our application! Please wait for our confirmation email to continue.';
     }
 
     private function resetForm()
