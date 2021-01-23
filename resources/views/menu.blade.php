@@ -1,16 +1,6 @@
-<!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-<head>
-   <meta charset="utf-8">
-   <meta name="viewport" content="width=device-width, initial-scale=1">
+@extends('layouts.app')
 
-   <title>Menu</title>
-
-   <link href="css/app.css" rel="stylesheet">
-   <link rel="stylesheet" href="{{ mix('/css/app.css') }}">
-   @livewireStyles
-</head>
-<body>
+@section('content')
     <div class="">
         <nav class="bg-white shadow">
             <div class="max-w-7xl mx-auto px-2 sm:px-4 lg:px-8">
@@ -23,9 +13,9 @@
                                 src="{{asset('/images/apple.svg')}}" alt="Workflow logo">
                         </div>
                         <div class="hidden lg:ml-6 lg:flex">
-                            <a href="#"
+                            <a href="/data-tables"
                                 class="inline-flex items-center px-1 pt-1 border-b-2 border-indigo-500 text-sm font-medium leading-5 text-gray-900 focus:outline-none focus:border-indigo-700 transition duration-150 ease-in-out">
-                                Dashboard
+                                LivewireDatables
                             </a>
                             <a href="#"
                                 class="ml-8 inline-flex items-center px-1 pt-1 border-b-2 border-transparent text-sm font-medium leading-5 text-gray-500 hover:text-gray-700 hover:border-gray-300 focus:outline-none focus:text-gray-700 focus:border-gray-300 transition duration-150 ease-in-out">
@@ -34,10 +24,6 @@
                             <a href="#"
                                 class="ml-8 inline-flex items-center px-1 pt-1 border-b-2 border-transparent text-sm font-medium leading-5 text-gray-500 hover:text-gray-700 hover:border-gray-300 focus:outline-none focus:text-gray-700 focus:border-gray-300 transition duration-150 ease-in-out">
                                 Projects
-                            </a>
-                            <a href="#"
-                                class="ml-8 inline-flex items-center px-1 pt-1 border-b-2 border-transparent text-sm font-medium leading-5 text-gray-500 hover:text-gray-700 hover:border-gray-300 focus:outline-none focus:text-gray-700 focus:border-gray-300 transition duration-150 ease-in-out">
-                                Calendar
                             </a>
                         </div>
                     </div>
@@ -89,9 +75,6 @@
         </nav>
     </div>
 
-    {{-- <div class="h-96"></div>
-    <div class="h-96"></div>
-
     <hr>
 
     <div class="my-8">
@@ -102,7 +85,7 @@
 
     <hr>
 
-    <div class="my-8">
+    {{-- <div class="my-8">
         <h2 class="text-lg font-semibold mt-4">Livewire Blog Posts w/ Comments</h2>
 
         <ul class="list-disc mt-4">
@@ -113,21 +96,21 @@
                 </li>
             @endforeach
         </ul>
-    </div>
+    </div> --}}
 
     <hr>
 
-    <div class="my-8">
+    {{-- <div class="my-8">
         <h2 class="text-lg font-semibold mt-4">Polling Example</h2>
 
         <div class="mt-4">
             <livewire:poll-example />
         </div>
-    </div>
+    </div> --}}
 
     <hr>
 
-    <div class="my-8">
+    {{-- <div class="my-8">
         <h2 class="text-lg font-semibold mt-4">Events Example with Tags</h2>
 
         <div class="mt-4">
@@ -136,7 +119,4 @@
         </div>
     </div> --}}
 
-@livewireScripts
-<script src="{{ mix('js/app.js') }}"></script>
-</body>
-</html>
+@endsection

@@ -1,5 +1,6 @@
 <?php
 
+use App\User;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -24,7 +25,9 @@ Route::get('/menu', function () {
 });
 
 //usersPaginations livewire component
-Route::get('/users', function () {
-    return view('menu');
+Route::get('/data-tables', function () {
+    return view('menu', [
+        'users' => User::all(),
+    ]);
 });
 
