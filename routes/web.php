@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-//Show RegistrationForm livewire component
+//RegistrationForm livewire component
 Route::get('/register', function () {
     return view('welcome');
 });
@@ -24,7 +24,7 @@ Route::get('/menu', function () {
     return view('menu');
 });
 
-//usersPaginations livewire component
+//DataTables livewire component
 Route::get('/data-tables', function () {
     return view('menu', [
         'users' => User::all(),
