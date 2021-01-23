@@ -13,11 +13,18 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
+//Show RegistrationForm livewire component
+Route::get('/register', function () {
     return view('welcome');
 });
 
+//SearchDropdown livewire component
 Route::get('/menu', function () {
+    return view('menu');
+});
+
+//usersPaginations livewire component
+Route::get('/users', function () {
     return view('menu');
 });
 
