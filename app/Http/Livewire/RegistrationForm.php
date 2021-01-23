@@ -6,6 +6,9 @@ use Livewire\Component;
 use App\Mail\RegistrationFormMailable;
 use Illuminate\Support\Facades\Mail;
 
+/**
+ * Component to validate data from a form & send a confirmation email.
+ */
 class RegistrationForm extends Component
 {
     public $first_name;

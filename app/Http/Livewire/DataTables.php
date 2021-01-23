@@ -6,6 +6,9 @@ use App\User;
 use Livewire\Component;
 use Livewire\WithPagination;
 
+/**
+ * Component to show & filter data-table from a model.
+ */
 class DataTables extends Component
 {
     use WithPagination;

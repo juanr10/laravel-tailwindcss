@@ -5,6 +5,9 @@ namespace App\Http\Livewire;
 use Livewire\Component;
 use Illuminate\Support\Facades\Http;
 
+/**
+ * Component to request data from an API (in this case Apple Music).
+ */
 class SearchDropdown extends Component
 {
     public $search;
