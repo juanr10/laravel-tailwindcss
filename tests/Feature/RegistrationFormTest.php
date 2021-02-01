@@ -13,7 +13,7 @@ class RegistrationFormTest extends TestCase
     /** @test */
     function main_page_contains_contact_form_livewire_component_test()
     {
-        $this->get('/register')->assertSeeLivewire('registration-form');
+        $this->get('/')->assertSeeLivewire('registration-form');
     }
 
     /** @test */

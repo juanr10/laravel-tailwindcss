@@ -85,7 +85,7 @@
 
     <hr>
 
-    {{-- <div class="my-8">
+    <div class="my-8">
         <h2 class="text-lg font-semibold mt-4">Livewire Blog Posts w/ Comments</h2>
 
         <ul class="list-disc mt-4">
@@ -96,7 +96,7 @@
                 </li>
             @endforeach
         </ul>
-    </div> --}}
+    </div>
 
     <hr>
 
