@@ -36,7 +36,7 @@ class CommentsSection extends Component
         $this->comment = '';
 
         //refresh post
-        $this->post = Post::find($this->post->id);
+        $this->post->refresh();
 
         $this->successMessage =  'Comment was posted!';
     }
