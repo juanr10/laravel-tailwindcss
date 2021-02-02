@@ -2,6 +2,7 @@
 
 use App\Post;
 use App\User;
+use App\Order;
 use App\Comments;
 use Illuminate\Database\Seeder;
 
@@ -30,5 +31,10 @@ class DatabaseSeeder extends Seeder
         Comments::create(['post_id' => 3, 'username' => 'Jennifer D', 'content' => 'Another comment for the post with an id of 3']);
         Comments::create(['post_id' => 4, 'username' => 'Anne F', 'content' => 'A comment for post id 4']);
         Comments::create(['post_id' => 4, 'username' => 'Diane S', 'content' => 'Another comment for the post with an id of 4']);
+
+        Order::create(['id' => 1, 'price' => '40']);
+        Order::create(['id' => 2, 'price' => '80']);
+        Order::create(['id' => 3, 'price' => '130']);
+        Order::create(['id' => 4, 'price' => '22']);
     }
 }
