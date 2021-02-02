@@ -39,25 +39,26 @@ class RegistrationFormTest extends TestCase
     }
 
     /** @test */
-    // function registration_form_first_name_is_required_test()
-    // {
-    //     Livewire::test(RegistrationForm::class)
-    //         ->set('last_name', 'Garcia')
-    //         ->set('email_address', 'carla@example.com')
-    //         ->set('country', 'Spain')
-    //         ->call('submitForm')
-    //         ->assertHasErrors(['first_name' => 'required']);
-    // }
+    function registration_form_first_name_is_required_test()
+    {
+        Livewire::test(RegistrationForm::class)
+            ->set('first_name')
+            ->set('last_name', 'Garcia')
+            ->set('email_address', 'carla@example.com')
+            ->set('country', 'Spain')
+            ->call('submitForm')
+            ->assertHasErrors(['first_name' => 'required']);
+    }
 
     /** @test */
-    // function registration_form_email_field_is_valid_test()
-    // {
-    //     Livewire::test(RegistrationForm::class)
-    //         ->set('first_name', 'Carla')
-    //         ->set('last_name', 'Garcia')
-    //         ->set('email_address', 'carlaexample')
-    //         ->set('country', 'Spain')
-    //         ->call('submitForm')
-    //         ->assertHasErrors(['email' => 'email']);
-    // }
+    function registration_form_email_field_is_valid_test()
+    {
+        Livewire::test(RegistrationForm::class)
+            ->set('first_name', 'Carla')
+            ->set('last_name', 'Garcia')
+            ->set('email_address', 'carla')
+            ->set('country', 'Spain')
+            ->call('submitForm')
+            ->assertHasErrors(['email_address' => 'email']);
+    }
 }

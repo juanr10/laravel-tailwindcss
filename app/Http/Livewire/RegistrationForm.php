@@ -31,18 +31,15 @@ class RegistrationForm extends Component
 
     public function submitForm()
     {
-        $contact['first_name'] = $this->first_name;
-        $contact['last_name'] = $this->last_name;
-        $contact['email_address'] = $this->email_address;
-        $contact['country'] = $this->country;
+        $contact = $this->validate();
 
         sleep(1);
         Mail::to($this->email_address)->send(new RegistrationFormMailable($contact));
 
-        $this->resetForm();
-
         $this->successMessage =
         'You have registered in our application! Please wait for our confirmation email to continue.';
+
+        $this->resetForm();
     }
 
     private function resetForm()

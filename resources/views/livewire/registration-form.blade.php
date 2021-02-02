@@ -33,21 +33,21 @@
         </div>
         <div class="mt-5 md:mt-0 md:col-span-2">
             <form wire:submit.prevent.action="submitForm" method="POST">
-                {{ csrf_field() }}
+                @csrf
                 <div class="shadow overflow-hidden sm:rounded-md">
                     <div class="px-4 py-5 bg-white sm:p-6">
                         <div class="grid grid-cols-6 gap-6">
                             <div class="col-span-6 sm:col-span-3">
                                 <label for="first_name" class="block text-sm font-medium text-gray-700">First
                                     name</label>
-                                <input type="text" wire:model="first_name" name="first_name"
+                                <input type="text" wire:model="first_name" id="first_name" name="first_name" value="{{ old('first_name') }}"
                                     class="mt-1 p-2 block w-full focus:ring-2 focus:ring-blue-600 shadow-sm sm:text-sm border-gray-300 rounded-md">
                                 @error('first_name') <span class="text-sm text-red-500">{{ $message }}</span> @enderror
                             </div>
 
                             <div class="col-span-6 sm:col-span-3">
                                 <label for="last_name" class="block text-sm font-medium text-gray-700">Last name</label>
-                                <input type="text" wire:model="last_name" name="last_name"
+                                <input type="text" wire:model="last_name" id="last_name" name="last_name" value="{{ old('last_name') }}"
                                     class="mt-1 p-2 block w-full focus:ring-2 focus:ring-blue-600 shadow-sm sm:text-sm border-gray-300 rounded-md">
                                 @error('last_name') <span class="text-sm text-red-500">{{ $message }}</span> @enderror
                             </div>
@@ -55,7 +55,7 @@
                             <div class="col-span-6 sm:col-span-4">
                                 <label for="email_address" class="block text-sm font-medium text-gray-700">Email
                                     address</label>
-                                <input type="text" wire:model="email_address" name="email_address"
+                                <input type="text" wire:model="email_address" id="email" name="email_address" value="{{ old('email_address') }}"
                                     class="mt-1 p-2 block w-full focus:ring-2 focus:ring-blue-600 shadow-sm sm:text-sm border-gray-300 rounded-md">
                                     @error('email_address') <span class="text-sm text-red-500">{{ $message }}</span> @enderror
                             </div>
@@ -63,7 +63,7 @@
                             <div class="col-span-6 sm:col-span-3">
                                 <label for="country" class="block text-sm font-medium text-gray-700">Country /
                                     Region</label>
-                                <select id="country" wire:model="country" name="country"
+                                <select id="country" wire:model="country" name="country" value="{{ old('country') }}"
                                     class="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
                                     <option>Spain</option>
                                     <option>Ecuador</option>
