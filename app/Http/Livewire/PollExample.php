@@ -11,7 +11,7 @@ class PollExample extends Component
 
     public function mount()
     {
-        $this->revenue = $this->getRevenue();
+        $this->getRevenue();
     }
 
     public function getRevenue()
